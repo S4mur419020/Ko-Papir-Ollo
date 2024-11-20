@@ -1,5 +1,6 @@
 package main;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 
 public class kopapirOllo extends javax.swing.JFrame {
@@ -125,6 +126,10 @@ public class kopapirOllo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        kilepes();
+    }
+    
      private void jatek(String jatekosvalasz) {
         String[] options = {"Kő", "Papír", "Olló"};
         Random random = new Random();
@@ -145,6 +150,18 @@ public class kopapirOllo extends javax.swing.JFrame {
      private void alapertelmezett(){
          jTextField1.setText("");
      }
+       private void kilepes(){
+        String uzenet = "Biztosan?";
+        String cim = "Kilépsz?"; 
+        int gombok = JOptionPane.OK_CANCEL_OPTION;
+        int tipus = JOptionPane.INFORMATION_MESSAGE;
+        int valasz = JOptionPane.showConfirmDialog(rootPane, uzenet, cim, tipus, gombok);
+        if (valasz ==JOptionPane.YES_OPTION) {
+            final int HIBA_KOD = 0;     
+           System.exit(HIBA_KOD);
+    }
+    
+}
     
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
